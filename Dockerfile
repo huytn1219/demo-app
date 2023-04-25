@@ -2,7 +2,7 @@ FROM golang:1.20
 
 WORKDIR /app
 
-COPY app/main .
+COPY main .
 
 EXPOSE 8080
 
