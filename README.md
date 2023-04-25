@@ -29,3 +29,8 @@ Install chart
 ```
 helm install demo-app oci://$ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/helm-demo-app-chart --version 0.1.0 -f values-dev.yaml
 ```
+Access the app
+```
+kubectl port-forward service/demo-app 8080:8080
+curl http://localhost:8080
+```
