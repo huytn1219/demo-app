@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "demo-app.fullname" . }}
+  name: {{ include "demo-app.name" . }}
   labels:
     app.kubernetes.io/name: {{ include "demo-app.name" . }}
     helm.sh/chart: {{ include "demo-app.chart" . }}
