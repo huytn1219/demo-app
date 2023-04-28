@@ -1,3 +1,3 @@
 image:
-  repository: 180287136233.dkr.ecr.us-west-2.amazonaws.com/skiapp 
+  repository: 180287136233.dkr.ecr.us-west-2.amazonaws.com/skiapp
   tag: dev-9e16ca14-3
