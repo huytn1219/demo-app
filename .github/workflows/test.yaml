@@ -1,0 +1,13 @@
+name: Do Something That Needs Scheduled
+
+on:
+  repository_dispatch:
+    types: do-something
+    
+jobs:
+  build:
+    name: Run Some Thing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do Something
+        run: echo Doing Something...
