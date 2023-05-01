@@ -14,7 +14,7 @@ metadata:
     kubernetes.io/ingress.class: alb
 spec:
   rules:
-  - host: {{ .Values.ingress.hostname | default (printf "%s.%s.%s" .Values.ingress.env Values.ingress.domain 'com') }}
+  - host: {{ .Values.ingress.hostname | default (printf "%s.%s.%s" .Values.ingress.env .Values.ingress.domain 'com') }}
     http:
       paths:
       - backend:
