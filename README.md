@@ -9,6 +9,20 @@ docker build -t demo-app .
 docker run -p 8080:8080 demo-app
 curl http://localhost:8080/
 ```
+
+### Create a secret to store Github Token
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github-token
+type: Opaque
+data:
+  GITHUB_TOKEN: <your-github-token>
+EOF
+```
+
 ### Install the app with argocd
 ```
 kubectl apply -f argo-app-dev.yaml
