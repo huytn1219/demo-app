@@ -20,10 +20,14 @@ spec:
     http:
       paths:
       - backend:
+        path: /*
+          serviceName: ssl-redirect
+          servicePort: use-annotation
+      - backend:
           service:
             name: {{ include "demo-app.name" . }}
             port: 
               number: 8080
-        path: /
+        path: /*
         pathType: Prefix
 {{- end }}
