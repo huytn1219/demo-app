@@ -20,5 +20,8 @@ spec:
       - backend:
           service:
             name: {{ include "demo-app.name" . }}
-            port: 8080
+            port: 
+              number: 8080
+        path: /
+        pathType: Prefix
 {{- end }}
