@@ -1,0 +1,23 @@
+{{- if .Values.ingress.enabled -}}
+kind: Ingress
+apiVersion: networking.k8s.io/v1beta1
+metadata:
+  name: {{ include "demo-app.name" . }}
+  annotations:
+    alb.ingress.kubernetes.io/group.name: {{ .Values.ingress.domain }}
+    alb.ingress.kubernetes.io/actions.forward-multiple-tg: >
+      {"type":"forward","forwardConfig":{"targetGroups":[{"serviceName":"{{ .Values.ingress.service.name }}","servicePort":"http"}]}}
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    kubernetes.io/ingress.class: alb
+spec:
+  rules:
+  - host: {{ .Values.ingress.hostname | default (printf "%s.%s.%s" .Values.ingress.env Values.ingress.domain 'com') }}
+    http:
+      paths:
+      - backend:
+          serviceName: {{ include "demo-app.name" . }}
+          servicePort: 8080
+{{- end }}
