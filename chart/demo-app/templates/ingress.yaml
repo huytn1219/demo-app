@@ -6,7 +6,7 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/group.name: {{ .Values.ingress.domain }}
     alb.ingress.kubernetes.io/actions.forward-multiple-tg: >
-      {"type":"forward","forwardConfig":{"targetGroups":[{"serviceName":"{{ .Values.ingress.service.name }}","servicePort":"http"}]}}
+      {"type":"forward","forwardConfig":{"targetGroups":[{"serviceName":"{{ include "demo-app.name" . }}","servicePort":"http"}]}}
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/scheme: internet-facing
