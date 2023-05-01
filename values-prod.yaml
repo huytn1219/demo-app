@@ -1,0 +1,7 @@
+image:
+  repository: 352858358668.dkr.ecr.us-east-1.amazonaws.com/demo-app 
+  tag: latest
+ingress:
+  enabled: true
+  env: prod
+  domain: demoawsblueprints
