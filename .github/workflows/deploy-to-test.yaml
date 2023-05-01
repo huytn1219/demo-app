@@ -39,9 +39,6 @@ jobs:
       with:
         fetch-depth: 0
         
-    - name: Print Git ref
-      run: echo ${{ github.ref }}
-      
     - run: git fetch --force --tags
 
     - name: Configure AWS Credentials
