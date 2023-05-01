@@ -12,7 +12,8 @@ spec:
       - name: gh-action-trigger
         image: curlimages/curl
         command:
-          - "sleep 3600"
+          - "sleep" 
+          - "3600"
 #          - "curl"
 #          - "-L"
 #          - "-X"
