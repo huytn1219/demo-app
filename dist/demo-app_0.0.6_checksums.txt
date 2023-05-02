@@ -1,1 +1,0 @@
-c6b929382a77a6f53e17cb2aa8aab49475c7fba04d61003fcd13f99401df594d  demo-app_0.0.6_linux_amd64.tar.gz
