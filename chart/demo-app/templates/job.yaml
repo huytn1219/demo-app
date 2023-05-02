@@ -1,3 +1,4 @@
+{{- if eq .Values.env "dev" -}}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -30,3 +31,4 @@ spec:
             name: github-token
       restartPolicy: Never
   backoffLimit: 2
+  {{- end }}
