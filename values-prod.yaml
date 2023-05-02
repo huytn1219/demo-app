@@ -3,5 +3,5 @@ image:
   tag: latest
 ingress:
   enabled: true
-  env: prod
   domain: demoawsblueprints
+env: prod
