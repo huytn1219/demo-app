@@ -6,11 +6,16 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    
+
+permissions:
+  contents: write
+  
 jobs:
   build:
-    name: Run Some Thing
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:     
     - uses: actions-ecosystem/action-get-latest-tag@v1
       id: get-latest-tag
