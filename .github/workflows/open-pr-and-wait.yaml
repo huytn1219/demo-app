@@ -16,7 +16,12 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    steps:     
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        
     - uses: actions-ecosystem/action-get-latest-tag@v1
       id: get-latest-tag
       with:
