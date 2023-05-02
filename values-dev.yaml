@@ -1,6 +1,6 @@
 image:
   repository: 352858358668.dkr.ecr.us-east-1.amazonaws.com/demo-app 
-  tag: latest
+  tag: v0.0.6
 ingress:
   enabled: true
   env: dev
